@@ -436,6 +436,8 @@ footer {
     border-bottom-left-radius: 20px;
     border-top-right-radius: 20px;
     padding: 12px;
+    background: none;
+    border: solid 2px rgb(127, 23, 150);
   }
 
   #info {
