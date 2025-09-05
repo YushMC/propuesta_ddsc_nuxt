@@ -1,0 +1,238 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  background: linear-gradient(to right, #56ccf2, #2f80ed);
+  min-height: 100dvh;
+}
+p {
+  line-height: 1.5;
+  font-weight: 200;
+  color: #0000009d;
+  text-wrap: pretty;
+}
+.card {
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: rgba(39, 39, 39, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border-top-right-radius: 80px;
+}
+
+section.contenido {
+  margin: auto;
+  width: 100%;
+
+  backdrop-filter: blur(10px);
+  position: relative;
+  padding: 5%;
+
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #f3f3f3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 16px;
+  header {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  figure.main-image {
+    width: 300px;
+    position: relative;
+
+    img {
+      border-radius: 20px !important;
+      overflow: hidden;
+      width: 100%;
+      filter: drop-shadow(0px 0px 11px #00000044);
+    }
+
+    .top-icon {
+      position: absolute;
+      top: 0;
+      right: -1px;
+      padding: 8px 16px;
+      background: #f3f3f3;
+      border-bottom-left-radius: 10px;
+      border-top-right-radius: 10px;
+      span {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.chibi_top_left {
+  left: 0;
+  top: 40px;
+  img {
+    rotate: 50deg;
+    animation: move_chibis 0.5s linear forwards;
+  }
+}
+
+.chibi_top_right {
+  right: 0;
+  top: 40px;
+  img {
+    rotate: 100deg;
+    animation: move_chibis_right 0.5s linear forwards;
+  }
+}
+
+.chibi_bottom_left {
+  left: 0;
+  bottom: 0;
+  img {
+    rotate: 50deg;
+    animation: move_chibis 0.5s linear forwards;
+  }
+}
+
+.chibi_bottom_right {
+  right: 0;
+  bottom: 0;
+  img {
+    rotate: 100deg;
+    animation: move_chibis_right 0.5s linear forwards;
+  }
+}
+
+.chibi {
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  transition: all 0.3 linear;
+  align-items: center;
+  img {
+    width: 100px;
+    animation: move_chibis 0.5s linear forwards;
+
+    scale: 1;
+  }
+}
+
+@keyframes move_chibis {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50px);
+    opacity: 1;
+  }
+}
+
+@keyframes move_chibis_right {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(50px);
+    opacity: 1;
+  }
+}
+
+/* animations */
+
+.fade {
+  animation: fade 0.8s ease-in-out forwards;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cards {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  h1 {
+    width: 100%;
+    text-align: center;
+  }
+
+  hr {
+    width: 500px;
+    height: 3px;
+    border: none;
+    background: rgb(127, 23, 150);
+  }
+  .container-cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 300px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+    border-radius: 18px;
+    position: relative;
+
+    span {
+      background: rgb(127, 23, 150);
+      color: #fff;
+      width: fit-content;
+      padding: 8px 16px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    img {
+      border-radius: 10px;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+
+    hr {
+      width: 200px;
+    }
+  }
+}

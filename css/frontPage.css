@@ -1,0 +1,42 @@
+#front-page {
+  background-image: url("https://www.dokidokispanish.club/assets/gui/Logo_DDSC.png");
+  background-size: 30%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  height: 88dvh;
+
+  display: flex;
+  flex-direction: column;
+  padding-inline: 5%;
+  gap: 16px;
+
+  aside {
+    width: 100%;
+    height: 50%;
+    display: flex;
+
+    &:first-child {
+      align-items: center;
+    }
+
+    &:last-child {
+      height: 30%;
+      align-items: end;
+      justify-content: end;
+    }
+    h1 {
+      width: 400px;
+      font-size: 3rem;
+      font-weight: 300;
+
+      text-wrap: balance;
+    }
+
+    h2 {
+      width: 300px;
+      font-weight: 300;
+    }
+  }
+}
