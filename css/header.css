@@ -2,32 +2,36 @@ header#cabecera {
   width: 100%;
   height: 10dvh;
   padding-inline: 5%;
-  overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   top: 0;
   left: 0;
+
+  label,
+  input {
+    display: none;
+  }
 }
 
-header .active {
-  background: rgba(50, 50, 50, 0.2);
+header#cabecera .active {
+  background: rgba(221, 221, 221, 0.2);
 }
 
-header nav {
+header#cabecera nav {
   width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-header ul {
+header#cabecera ul {
   display: flex;
   justify-content: space-between;
   gap: 16px;
   list-style: none;
-  background: rgba(221, 221, 221, 0.2);
+  background: rgba(50, 50, 50, 0.2);
   padding: 5px;
 
   li {
@@ -35,7 +39,56 @@ header ul {
   }
 }
 
-header ul,
-header ul li {
+header#cabecera ul,
+header#cabecera ul li {
   border-radius: 6px;
+}
+
+@media screen and (max-width: 800px) {
+  header#cabecera {
+    position: fixed !important;
+    z-index: 100;
+    backdrop-filter: blur(20px);
+
+    h1 {
+      font-size: 1rem;
+    }
+
+    label {
+      display: block;
+    }
+
+    input[type="checkbox"] + nav {
+      transform: translateX(-200px);
+      opacity: 0;
+      visibility: hidden;
+    }
+    input[type="checkbox"]:checked + nav {
+      transform: translatex(0px);
+      opacity: 1;
+      visibility: visible;
+      backdrop-filter: blur(20px);
+      background: rgba(50, 50, 50, 0.95);
+    }
+  }
+
+  header#cabecera nav {
+    position: absolute;
+    top: 10dvh;
+    left: 0;
+    width: 70dvw;
+    z-index: 100;
+    border-top-right-radius: 30px;
+    overflow: hidden;
+    transition: all 0.3s linear;
+    z-index: 100;
+
+    ul {
+      width: 100%;
+      height: 90dvh;
+      display: flex;
+      flex-direction: column;
+      padding: 5% 1%;
+    }
+  }
 }
